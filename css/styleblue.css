@@ -1,0 +1,32 @@
+h5,.navbar.shrink .navbar-nav li a:hover,.navbar .navbar-nav li a:hover,.navbar.shrink .navbar-nav li a:hover,
+.navbar .side-menu-button.actives .fa,.pushmenu .push_nav > li > a > span,#about-us .about-us-1 .right-section .feature:hover .icon
+,#about-us .about-us-2 p,.service-3 .section h2 ,.thinker-wrap  h4,.overlay h4.color,.overlay h4.base ,#pricing-table-section .pricing-table h4,
+#happy-clients h5,.blog-section a,#blog-text p span,#contact-us2 .left-section #countries ul li:hover,#blog-text-slider .owl-controls .owl-page.active span,
+#contact-us2 .left-section #countries ul li:hover,footer .breadcrumb li a:hover, footer .breadcrumb li a:focus,#area-main ul.blog-author li a:hover,.blog_mitex .morepost-wrap2 a:hover,
+.blog_mitex .morepost-wrap2 a:hover,.blog_mitex ul.category li a:hover,.blog_mitex ul.category li a .date,.blog_mitex ul.category li a:hover,
+.blog_mitex ul.category li a:hover,.blog_mitex .blog-item blockquote,.blog_mitex .blog-item .post-comment form input[type="submit"], .contact form input[type="submit"]
+,.blog_mitex .morepost-wrap2 .morepost:hover .fa-long-arrow-left, .morepost-wrap .morepost:hover .fa-long-arrow-left
+,.blog_mitex .morepost-wrap2 .morepost:hover .fa-long-arrow-right, .morepost-wrap .morepost:hover .fa-long-arrow-right
+{
+    color: #07aaa5;
+
+}
+
+.navbar .navbar-header button span ,.navbar .navbar-nav  li a:before,#menu_bars:hover span ,.navbar.shrink #menu_bars:hover span,
+.swiper-slide .button.special, .service-1 .section hr, .service-1 .section:hover,.service-2 .progress .progress-bar,
+.work-filter ul li a:hover,.work-filter ul li a.active,.work-filter ul li a.active:hover,.work-filter ul li a:hover,
+.work-filter ul li a.active:hover,.work-filter ul li a.active,#pricing-table-section .pricing-table .button:before ,#pricing-table-section .pricing-table.black,
+#pricing-table-section .pricing-table.black .button:before,#happy-clients .owl-controls .owl-page.active span,
+#news-1 .left-section .button,#contact-us2 .right-section form .button:before,#blog-text #blog-text-slider .owl-controls .owl-page.active span
+,#area-main .buttons,#area-main .tag-cloud li a:hover, .blog-reply a.btn-rep:hover,.blog_mitex .social-link li a:hover,#area-main .tag-cloud li a:hover, .blog-reply a.btn-rep:hover,.blog_mitex .blog-item .post-comment form input[type="submit"]
+,.blog_mitex .blog-item .post-comment form a, .contact form  a
+{
+    background: #07aaa5;
+}
+.swiper-slide .button.special,.work-filter ul li a:hover,.work-filter ul li a.active,.work-filter ul li a.active:hover,.work-filter ul li a:hover,
+.work-filter ul li a.active:hover,.work-filter ul li a.active,.blog_mitex .social-link li a:hover{
+    border-color: #07aaa5;
+}
+.thinker-image .overlay{
+    background: rgba(7, 170, 165,.75) ;
+}

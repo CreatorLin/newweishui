@@ -1,0 +1,14 @@
+/* BORDER TOP SKIN */
+.navigation-landscape .nav-menu:not(.nav-menu-social) > li:not(.icon-item) > a {
+  height: 66;
+  padding: 22px 15px 26px;
+  border-top: solid 4px transparent;
+  -webkit-transition: color 0.3s, background 0.3s, border 0.3s;
+  transition: color 0.3s, background 0.3s, border 0.3s;
+}
+
+.navigation-landscape .nav-menu:not(.nav-menu-social) > li:not(.icon-item):hover > a, 
+.navigation-landscape .nav-menu:not(.nav-menu-social) > li:not(.icon-item).active > a, 
+.navigation-landscape .nav-menu:not(.nav-menu-social) > li:not(.icon-item).focus > a {
+  border-top-color: #8CC152;
+}

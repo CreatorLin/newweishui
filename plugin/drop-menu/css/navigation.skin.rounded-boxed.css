@@ -1,0 +1,31 @@
+/* ROUNDED BOXED SKIN */
+.navigation-landscape .nav-menu:not(.nav-menu-social) > li:not(.icon-item) > a {
+  height: 35px;
+  margin: 18px 0 17px;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+.navigation-landscape .nav-menu:not(.nav-menu-social) > li:not(.icon-item):hover > a, 
+.navigation-landscape .nav-menu:not(.nav-menu-social) > li:not(.icon-item).active > a, 
+.navigation-landscape .nav-menu:not(.nav-menu-social) > li:not(.icon-item).focus > a {
+  color: #ffffff;
+  background-color: #8CC152;
+}
+
+.navigation-landscape .nav-menu:not(.nav-menu-social) > li:not(.icon-item):hover > a .submenu-indicator-chevron, 
+.navigation-landscape .nav-menu:not(.nav-menu-social) > li:not(.icon-item).active > a .submenu-indicator-chevron, 
+.navigation-landscape .nav-menu:not(.nav-menu-social) > li:not(.icon-item).focus > a .submenu-indicator-chevron {
+  border-color: transparent #ffffff #ffffff transparent;
+}
+
+.nav-dropdown > li:hover > a,
+.nav-dropdown > li.focus > a {
+  color: #ffffff;
+  background-color: #8CC152;
+}
+
+.nav-dropdown > li:hover > a .submenu-indicator-chevron,
+.nav-dropdown > li.focus > a .submenu-indicator-chevron {
+  border-color: transparent #ffffff #ffffff transparent;
+}
