@@ -503,8 +503,14 @@ footer {
   .pure-text-container {
     width: 800px; } }
 
+hr.g-doc {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #6ECED4;
+  margin: 10px 0; }
+
 .google-doc {
-  border: 1px solid #CCC;
+  border: 1px solid #666;
   height: 600px;
   margin-top: 10px; }
 
