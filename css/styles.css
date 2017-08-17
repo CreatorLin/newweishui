@@ -52,20 +52,22 @@ video {
 
 .light-color .nav-menu > li > a:before {
   box-shadow: none;
-  background-color: #E69903; }
+  background-color: #E69903;
+  bottom: -4px; }
 
 .light-color .nav-dropdown {
-  background-color: #FFF8F8; }
+  background-color: #2e81b6; }
 
 .light-color .nav-dropdown > li > a {
-  color: #636360;
-  text-shadow: none; }
+  color: #FFF;
+  text-shadow: none;
+  padding: 10px 25px; }
   .light-color .nav-dropdown > li > a:hover, .light-color .nav-dropdown > li > a:focus, .light-color .nav-dropdown > li > a:active, .light-color .nav-dropdown > li > a.active {
-    color: #2F2F2E;
-    text-shadow: none; }
+    color: #ffd700;
+    text-shadow: none;
+    background: #1c457a; }
 
 .light-color .nav-dropdown > li.focus > a {
-  color: #7E4642;
   text-shadow: none; }
 
 .navigation {
@@ -243,7 +245,7 @@ footer {
   font-family: "Noto Sans TC", sans-serif;
   text-shadow: 0 2px 4px black;
   font-size: 8.8px;
-  padding: 1.2em 0 1.86em 0;
+  padding: 1em 0 1em 0;
   background: rgba(0, 0, 0, 0.45);
   border-top: 1px solid #FFF;
   border-bottom: 1px solid #FFF;
@@ -259,7 +261,7 @@ footer {
     font-size: 192%;
     line-height: 1.48em;
     font-weight: 500;
-    margin-bottom: 5px; }
+    margin-bottom: 0; }
   .section-top-heading p {
     font-size: 157%;
     line-height: 1.48em;
@@ -288,9 +290,17 @@ footer {
 .btn-default {
   background: #422510;
   border-color: #A58E7D;
-  transition: all 1s; }
+  transition: all 1s;
+  color: #FFF; }
   .btn-default:hover, .btn-default:active, .btn-default:focus {
     background: #C29D82; }
+
+.full-video {
+  position: absolute;
+  right: 60px;
+  bottom: 10px;
+  font-size: 14px;
+  padding: 8px 10px; }
 
 .control-btn {
   position: absolute;
@@ -318,7 +328,7 @@ footer {
   text-align: center;
   margin-bottom: 35px;
   box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.2); }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 1200px) {
     .page-title-container {
       margin-top: 78px; } }
   .page-title-container .sub-title {
@@ -474,7 +484,7 @@ footer {
   .list-item.list-item-text {
     padding-bottom: 12px;
     margin-bottom: 12px;
-    border-bottom: 1px solid #D8D8D8; }
+    border-bottom: 2px solid #D8D8D8; }
     .list-item.list-item-text .list-text.ellipsis, .list-item.list-item-text p.ellipsis {
       height: 33px; }
 
@@ -482,7 +492,7 @@ footer {
   width: 100%;
   padding-bottom: 56.25%; }
   .list-img.border {
-    border: 1px solid #CCC; }
+    border: 1px solid #333; }
 
 .page-context {
   padding: 0; }
