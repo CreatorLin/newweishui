@@ -1,4 +1,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+body {
+  background-image: url(../imgs/bg-light.jpg); }
+
 .text-center {
   text-align: center; }
 
@@ -140,9 +143,14 @@ video {
 
 .nav-dropdown > li:hover > a,
 .nav-dropdown > li.focus > a {
-  color: #FFF;
-  opacity: 1;
-  text-shadow: 0 0 4px black; }
+  color: #FFF; }
+  .nav-dropdown > li:hover > a:hover, .nav-dropdown > li:hover > a:focus, .nav-dropdown > li:hover > a:active,
+  .nav-dropdown > li.focus > a:hover,
+  .nav-dropdown > li.focus > a:focus,
+  .nav-dropdown > li.focus > a:active {
+    color: #FFF;
+    opacity: 1;
+    text-shadow: 0 0 4px black; }
 
 .nav-menu > li > .nav-dropdown {
   border: none; }
@@ -168,19 +176,39 @@ video {
   background: transparent; }
 
 .navigation-portrait .nav-dropdown > li > a {
-  color: #888; }
+  color: #888;
+  padding-left: 35px; }
+
+.navigation-portrait .nav-dropdown > li:last-child > a:last-child {
+  margin-bottom: 15px; }
 
 .navigation-portrait .nav-dropdown > li:hover > a,
 .navigation-portrait .nav-dropdown > li.focus > a {
   text-shadow: none; }
 
+.light-color .navigation-portrait .nav-menus-wrapper {
+  background: #2e81b6; }
+
+.light-color .navigation-portrait .nav-menu > li > a {
+  color: #FFF; }
+
+.light-color .navigation-portrait .nav-menus-wrapper-close-button {
+  color: #FFF; }
+
+.light-color .navigation-portrait .nav-dropdown > li > a {
+  color: #FFF; }
+
 footer {
   background: #41240F;
   font-family: "Noto Sans TC", sans-serif;
   font-weight: 300;
-  padding: 18px 0 28px 0; }
+  padding: 18px 0 28px 0;
+  background-image: url(../imgs/bg.jpg);
+  background-size: 211px;
+  background-position-y: -15px; }
   footer.deep-red {
-    background-color: #AA2C2B; }
+    background-color: #AA2C2B;
+    background-image: url(../imgs/bg.jpg); }
   footer .adress-container {
     text-align: center; }
     @media only screen and (min-width: 992px) {
@@ -189,7 +217,7 @@ footer {
   footer .address {
     font-size: 13px;
     line-height: 22px;
-    color: #D6C5B4;
+    color: #2c190a;
     padding-top: 10px;
     display: inline-block;
     text-align: left;
@@ -212,7 +240,7 @@ footer {
     footer .address:last-child {
       padding-right: 0; }
     footer .address .title {
-      color: #FFF; }
+      color: #333; }
   footer .social-block .fa {
     font-size: 32px;
     padding-right: 8px; }
@@ -247,14 +275,24 @@ footer {
   text-shadow: 0 2px 4px black;
   font-size: 8.8px;
   padding: 1em 0 1em 0;
-  background: rgba(0, 0, 0, 0.45);
-  border-top: 1px solid #FFF;
-  border-bottom: 1px solid #FFF;
+  background: #2c190a;
+  border-top: 1px solid #e8bb9a;
+  x-border-bottom: 1px solid #FFF;
   position: relative;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  padding-bottom: 58px; }
+  .section-top-heading img {
+    padding: 2px 15px;
+    max-width: 100%;
+    height: auto; }
+    @media only screen and (min-width: 480px) {
+      .section-top-heading img {
+        max-width: auto;
+        height: 30px; } }
   @media only screen and (min-width: 768px) {
     .section-top-heading {
-      font-size: 12px; } }
+      font-size: 12px;
+      padding-bottom: 1em; } }
   @media only screen and (min-width: 992px) {
     .section-top-heading {
       font-size: 12px; } }
@@ -262,7 +300,8 @@ footer {
     font-size: 192%;
     line-height: 1.48em;
     font-weight: 500;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    color: #D6C5B4 !important; }
   .section-top-heading p {
     font-size: 157%;
     line-height: 1.48em;
@@ -278,15 +317,15 @@ footer {
     font-size: 16px; }
 
 .slider-content {
-  width: 90vw;
+  x-width: 90vw;
   position: absolute;
-  bottom: 55px;
+  bottom: 0;
   left: 0;
   right: 0;
   margin: auto; }
   @media only screen and (min-width: 768px) {
     .slider-content {
-      width: 462px; } }
+      x-width: 462px; } }
 
 .btn-default {
   background: #422510;
@@ -301,14 +340,18 @@ footer {
   right: 60px;
   bottom: 10px;
   font-size: 14px;
-  padding: 8px 10px; }
+  padding: 8px 10px;
+  z-index: 999;
+  background: #583d23;
+  color: #d0ceb7; }
 
 .control-btn {
   position: absolute;
   bottom: 15px;
   right: 25px;
   width: 25px;
-  height: 25px; }
+  height: 25px;
+  z-index: 999; }
   .control-btn:hover .fa {
     opacity: 1; }
   .control-btn .fa {
@@ -323,7 +366,7 @@ footer {
 
 .page-title-container {
   margin-top: 56px;
-  height: 172px;
+  height: 300px;
   background-size: auto 100% !important;
   background-position: center center !important;
   text-align: center;
@@ -332,27 +375,43 @@ footer {
   @media only screen and (min-width: 1200px) {
     .page-title-container {
       margin-top: 78px; } }
-  .page-title-container .sub-title {
+  .page-title-container.aspect-fill {
+    background-size: cover !important;
+    background-position: center center !important; }
+    .page-title-container.aspect-fill .sub-title {
+      color: rgba(255, 255, 255, 0.7);
+      text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.8); }
+    .page-title-container.aspect-fill .title {
+      color: #FFF;
+      text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.8); }
+    .page-title-container.aspect-fill .breadcrumb li a {
+      color: rgba(255, 255, 255, 0.8); }
+    .page-title-container.aspect-fill .breadcrumb li.active a {
+      color: rgba(255, 255, 255, 0.6); }
+
+.page-title-block {
+  margin-bottom: 30px; }
+  .page-title-block .sub-title {
     font-size: 20px;
     line-height: 26px;
-    padding: 30px 12px 6px 12px;
+    padding: 0px 0px 6px 0px;
     color: #2B7CB1;
     font-family: "PT Serif", serif;
     border-bottom: 1px solid #9ECCB8;
     display: inline-block; }
-  .page-title-container .title {
-    font-size: 28px;
-    line-height: 40px;
+  .page-title-block .title {
+    font-size: 35px;
+    line-height: 50px;
     color: #1A435D;
-    padding-top: 11px;
+    padding-bottom: 11px;
     font-weight: 500;
     letter-spacing: 2px; }
 
 .breadcrumb {
   background-color: transparent;
   color: #797979;
-  font-size: 14px;
-  padding: 6px;
+  font-size: 16px;
+  padding: 6px 0;
   margin-bottom: 0; }
 
 .breadcrumb > li + li:before {
