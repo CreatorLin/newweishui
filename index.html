@@ -133,6 +133,20 @@
     <script src="js/jquery.dotdotdot.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
+        var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
+      
+        if(isiPhone > -1)
+        {
+          $('video').click(function(){
+            $('video').play();
+          });
+      
+        }
+        
+      });​
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
         $("video").prop('muted', true);
       
         $("#mute-video").click( function (){
