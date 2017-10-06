@@ -85,8 +85,7 @@ video {
   background-color: transparent; }
 
 .nav-menu > li > a {
-  color: #FFF;
-  opacity: .4;
+  color: #C6C6C6;
   text-shadow: 0 0 4px black;
   font-weight: 400;
   transition: all 1s;
