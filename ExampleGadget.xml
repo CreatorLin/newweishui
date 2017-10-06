@@ -1,5 +1,17 @@
 <Module>
-<ModulePrefs height="300" title="BlogSocial" test1="234" test2="234">
+<ModulePrefs height="300" title="BlogSocial">
+<UserPref name="myname" display_name="Name" default_value="Rowan"/>
+  <UserPref name="myphoto" display_name="Photo" default_value="http://doc.examples.googlepages.com/rowan-headshot.jpg"/>
+  <UserPref name="mychoice" display_name="Show Photo?" datatype="bool" default_value="true"/>
+  <UserPref name="mycolor" display_name="Color" default_value="Yellow" datatype="enum" >
+    <EnumValue value="Red" />
+     <EnumValue value="Aqua" />
+     <EnumValue value="Lime" />
+     <EnumValue value="Yellow" />
+     <EnumValue value="Pink" />
+     <EnumValue value="Orange" />
+     <EnumValue value="White" />
+   </UserPref>
 <Require feature="opensocial-0.7"/>
 <Require feature="google.blog"/>
 <Require feature="skins"/>
