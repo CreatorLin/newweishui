@@ -1,5 +1,5 @@
 <Module>
-<ModulePrefs height="300" title="BlogSocial" test1="" test2="">
+<ModulePrefs height="300" title="BlogSocial" test1="234" test2="234">
 <Require feature="opensocial-0.7"/>
 <Require feature="google.blog"/>
 <Require feature="skins"/>
