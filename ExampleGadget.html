@@ -1,128 +1,40 @@
-<script type="text/javascript"> 
-    var friendProfiles = {};
-    var blog;
+<script type="text/javascript">
+   // Get userprefs
+   var prefs = new gadgets.Prefs();
 
-    function goToCanvas() {
-        var view = gadgets.views.getSupportedViews()['canvas'];
-        gadgets.views.requestNavigateTo(view);
-    } /** * This method is called after your friend data is loaded. It parses the friend data and * saves the profile ids of your friends, then fetches the blog data. */
+   function displayGreeting () {
+     // Get current time
+     var today = new Date();
+     var time = today.getTime();
+     var html = "";
 
-    function onLoadFriends(data) {
-        if (data.responseItems_.viewerFriends.data_ == null) {
-            document.getElementById("output").style.textAlign = "center";
+     // Based on the time of day, display an appropriate greeting
+     var hour = today.getHours();
+     var salutation = "Afternoon";
+     if (hour < 12) {
+       salutation = "Morning";
+     } else if (hour > 17) {
+       salutation = "Evening";
+     }
 
-            if (gadgets.views.getCurrentView().getName() == "canvas") {
-                document.getElementById("output").innerHTML = 'Sign in using the link above';
-            } else {
-                document.getElementById("output").innerHTML = '<a style="color:' + linkColor + '" href="javascript:void(0);" onclick="goToCanvas();">Sign in to Friend Connect!</a>';
-            } return;
-        }
+     // Set the background color according to the mycolor userpref
+     var element = document.getElementById('content_div');
+     element.style.height=250;
+     // Set the background color according to the mycolor userpref
+     element.style.backgroundColor=prefs.getString("mycolor");
 
-        var friends = data.responseItems_.viewerFriends.data_.array_;
+     // Display a greeting based on the myname userpref
+     html += "<br><FONT SIZE=6>Good " + salutation + ", " +
+           prefs.getString("myname") + "!!!<br><br></FONT>";
 
-        for (var i = 0; i < friends.length; i++) {
-            var id = friends[i].fields_.id; friendProfiles[id] = "true";
-        }
+     // If the "Show Photo?" checkbox is checked, display photo.
+     if (prefs.getBool("mychoice") == true) {
+       html += '<img src="' + prefs.getString("myphoto") + '">';
+     }
+     element.innerHTML = html;
+   }
+   // Pass the userprefs for this module instance to the function
+   // (allows users to include multiple module instances on their page)
+   gadgets.util.registerOnLoadHandler(displayGreeting);
 
-        // Get the feed data 
-
-        blog = new google.Blog(function () {
-            // This callback is run as part of the constructor of google.Blog to signify 
-            // that everything was initialized. Once the constructor has 
-            // completed and then call getCommentsJson 
-            blog.getCommentsJson(onLoadFeed);
-        }, window.name);
-    }
-
-
-    /** * This method parses the feed data that was returned by the call to fetch the blog data. */
-    function onLoadFeed(data) {
-        var list = document.getElementById("output");
-        if (!data.data) {
-            list.innerHTML = "An error occured fetching the feed data";
-        }
-        data = data.data;
-        if (!data.feed.entry || data.feed.entry.length == 0) {
-            list.innerHTML = "No comments on this blog!";
-        }
-        for (var i = 0; i < data.feed.entry.length; i++) {
-            var entry = data.feed.entry[i];
-            var dt = document.createElement("DT"); dt.style.paddingTop = "10px";
-            var dd = document.createElement("div");
-            var href;
-            for (var j = 0; j < entry.link.length; ++j) {
-                if (entry.link[j].rel == "alternate") {
-                    href = entry.link[j].href.replace(/#/, "#comment-");
-                }
-            }
-            var a = document.createElement("A");
-            a.style.color = linkColor;
-            a.setAttribute("href", href);
-            a.appendChild(document.createTextNode(entry.author[0].name.$t + " wrote..."));
-            dt.appendChild(a);
-            dd.appendChild(document.createTextNode(entry.content.$t));
-            list.appendChild(dt); list.appendChild(dd);
-            // extendedProperty is Blogger's extension to ATOM 1.0 that contains the 
-            // OpenSocial user id of the author if the author is a public follower 
-            // of the blog. This field will not be present if the author is not a 
-            // public follower of the blog. 
-            var extendedProperty = entry.author[0].gd$extendedProperty;
-            if (extendedProperty && extendedProperty.name == "OpenSocialUserId") {
-                if (friendProfiles[extendedProperty.value]) {
-                    dt.style.backgroundColor = "yellow"; dd.style.backgroundColor = "yellow";
-                }
-            }
-        }
-    }
-    var linkColor;
-    var textColor;
-    var backgroundColor;
-    function initData() {
-        textColor = gadgets.skins.getProperty('CONTENT_TEXT_COLOR');
-        document.getElementById("output").style.color = textColor;
-        linkColor = gadgets.skins.getProperty('CONTENT_LINK_COLOR');
-        document.getElementById("canvas-link").style.color = linkColor;
-        backgroundColor = gadgets.skins.getProperty('CONTENT_BG_COLOR');
-        document.body.style.backgroundColor = backgroundColor;
-
-        // Show canvas mode link if appropriate 
-
-        if (gadgets.views.getCurrentView().getName() != "canvas") {
-            document.getElementById("canvas-link-container").style.display = "block";
-        }
-        var req = opensocial.newDataRequest();
-        req.add(req.newFetchPersonRequest('VIEWER'), 'viewer');
-        req.add(req.newFetchPeopleRequest('VIEWER_FRIENDS', {}), 'viewerFriends');
-        req.send(onLoadFriends);
-    }
-    gadgets.util.registerOnLoadHandler(initData); 
-</script>
-
-
-<div style="display:none;float:right;font-size:80%" id="canvas-link-container">
-    <a id="canvas-link" href="javascript:void(0);" onclick="goToCanvas();">Canvas mode</a>
-</div>
-<div style="clear:both"></div>
-<div id="output" style="overflow:auto; height:270px;font-size:90%"></div>
-
-<b:widget id='Gadget1' locked='false' title='BlogSocial' type='Gadget'>
-    <b:includable id='main'>
-        <!-- only display title if it's non-empty -->
-        <b:if cond='data:renderingUrl != &quot;&quot;'>
-            <b:if cond='data:title != &quot;&quot;'>
-                <h2 class='title'>
-                    <data:title/>
-                </h2>
-            </b:if>
-            <div class='widget-content'>
-                <b:if cond='data:nonSocialFragment != &quot;&quot;'>
-                    <data:nonSocialFragment/>
-                </b:if>
-            </div>
-            <b:else/>
-            <data:errorMessage/>
-        </b:if>
-
-        <b:include name='quickedit' />
-    </b:includable>
-</b:widget>
+   </script>
